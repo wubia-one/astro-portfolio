@@ -1,11 +1,14 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import robotsTxt from "astro-robots-txt";
+import cloudflare from '@astrojs/cloudflare';
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-portfolio-uzair.vercel.app",
+  output: 'server',
+  adapter: cloudflare(),
+  site: "https://doc.wubia.net",
   integrations: [
     tailwind(),
     sitemap({
